@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <meta name="format-detection" content="telephone=no">
+        <link href="yyf.css" rel="stylesheet">
+        <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+        <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular-animate.min.js"></script>
+		<style>
+		
+		.at-floating-card {
+				z-index: 999999;
+				position: fixed;
+				bottom: 0px;
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+				background: rgb(76, 76, 76);
+				width: 100%;
+				border-radius: 2px;
+				box-shadow: 0 4px 12px rgba(#000, 0.12);
+				padding: 30px 20px;
+				font-family: 'Open Sans', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+		}
+		
+		.container {
+		
+			background: rgb(76, 76, 76);
+			display: none; 
+            position: absolute; 
+			top: 25%; 
+            left: 25%; 
+            width: 55%; 
+            height: 55%; 
+            z-index:1002; 
+			color: #FFFFFF;
+			margin: 2em auto;
+			box-shadow: 0 0 20px 0px rgb(47, 47, 47),
+									0 0 20px 0px rgba(107, 104, 104, 0);
+						
+            overflow: auto;
+			
+			display: none; 
+            position: absolute; 
+            top: 25%; 
+            left: 25%; 
+            width: 55%; 
+            height: 55%; 
+            background: rgb(76, 76, 76);
+            z-index:1002; 
+            overflow: auto;
+            
+			
+		}
+
+		.container img {width: 100%;}
+
+		.container .title-card {
+			font-size: 15px;
+			font-weight: 100;
+			margin: 10px 0 0 0;
+			font-family: 'Raleway', sans-serif;
+		}
+
+		.container .rate .fa{color: gold; letter-spacing:1px; font-size:18px;}
+
+		.container .rate p{
+			color: #fff;
+			font-weight: 100;
+			font-size: 12px;
+			display: inline;
+		}
+
+		.container span {
+			width: 100%;
+			color: #FFFFFF;
+			display: inline-block;
+		}
+		.container .map{ margin: 1px 0 -15px 0; }
+		.container .phone{ margin: -5px 0 10px 0; }
+
+
+		.container span p{
+			color: background: rgb(76, 76, 76);
+			margin-left: 10px;
+			}
+
+		.container span p, i{
+			font-size:16px;
+			font-weight: 100;
+			display: inline-block;
+		}
+
+		button {
+			width: 100%;
+			color: #fff;
+			padding:17px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			font-size: 20px;
+			transition: all 0.3s linear;
+			text-transform: uppercase;
+			font-family: 'Open Sans', sans-serif;
+			background: linear-gradient(to left, rgb(11, 191, 160), rgb(108, 196, 115));
+			
+			opacity: 1;
+		}
+
+		button:hover{
+			background: linear-gradient(to right, rgb(11, 191, 160), rgb(108, 196, 115));
+			opacity: 0.9;
+		}
+
+
+		p {
+			color: #D8DBE2;
+			font-size: 14px;
+			line-height: 1.5;
+			letter-spacing: 0.3px;
+			font-family: 'Open Sans', sans-serif;
+		}
+		#test{
+		width: 100%;
+		height: 100px;
+		background: #444;
+		color: #fff;
+	}
+		</style>
+    </head>
+	
+    <div class="at-floating-card">
+		<div class="at-floating-card__thumbnail" style="width: 80px;max-width: 80px;min-width: 80px;border: 1px solid #EEEEEE;border-radius: 100%;margin: 0 20px 0 0;padding: 4px;box-sizing: border-box;overflow: hidden;">
+			<img src="https://i.loli.net/2021/09/12/PliehN4Tt7MjEXL.png" alt="image"  style="display: block;width: 100%;max-width: 100%;border-radius: 100%;">
+		</div>
+		<div class="at-floating-card__content">
+			<h2 class="at-floating-card__title" style="margin: 0 6px 6px 6px;padding: 0;color: #fff;font-size: 14px !important;font-weight: 700;line-height: 2;">生命起源</h2>
+			<h3 class="at-floating-card__sub-title"  style="width=100%;margin: 0 6px 6px 6px;padding: 0;color: #D8DBE2;font-size: 12px;font-weight:400;">在45亿年前，在地球的海洋中就产生了存在有机分子的“原始汤”。</h3>
+			<p class="at-floating-card__description" style="margin: 0 6px 6px 6px;padding: 0;color: #D8DBE2;font-size: 12px;line-height: 20px;">收集更多物质来合成生物！</p>
+		</div>
+	</div>
+	
+    <body style="background: rgb(76, 76, 76);">
+		
+        <div class="manorBg" style="top: 0px!important;" ng-app="myApp" ng-controller="myCtrl">
+            <div class="forestBox">
+                <img src="https://i.loli.net/2021/09/09/46f29cqkOvD7X5l.jpg">		
+				
+                <div ng-repeat="item in qplist track by $index">
+                    <div class="huluBo bottle-fade1" style="{{item.style}}" id="bottle{{$index+1}}"
+                    ng-click="qpclick('bottle',$index+1,item.operation)">
+                        <div class="circleB">+{{item.score}}</div>
+                        <div class="text">{{item.operation}}</div>
+                    </div>
+                </div>
+
+				
+            </div>
+        <script>qa
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope, $timeout) {
+                //顶部气泡每次最多展示五个 气泡截取
+                function change() {
+                    //定义气泡位置
+                    $scope.stylelist = [{
+                        style: 'top:40px;left:200px'
+                    }, {
+                        style: 'top:80px;left:10px'
+                    }, {
+                        style: 'top:120px;left:140px'
+                    }, {
+                        style: 'top:30px;left:60px'
+                    }, {
+                        style: 'top:120px;left:250px'
+                    }];
+                    //循环便利到数组里
+                    for (var i = 0; i < $scope.qplist.length; i++) {
+                        $scope.qplist[i].style = $scope.stylelist[i].style;
+                    }
+                }
+
+                function initParams() {
+                    //摇摆动画
+                    $scope.isshow = false;
+                    $scope.qplist = [{
+                        operation: "碳元素",
+                        score: 'C'
+                    }, {
+                        operation: "氢元素",
+                        score: 'H'
+                    }, {
+                        operation: "氧元素",
+                        score: 'O'
+                    }, {
+                        operation: "氮元素",
+                        score: 'N'
+                    }, {
+                        operation: "磷元素",
+                        score: 'P'
+                    }];
+                    if ($scope.qplist) {
+                        change();
+                    }
+                }
+                //顶部气泡点击效果
+                $scope.qpclick = function(id, type, operation) {
+                    var id = 'bottle' + type;
+                    $scope.doanimation(id, type, operation);
+                };
+				count = 0;
+                //执行动画
+                $scope.doanimation = function(id, type, missionid) {
+                    $scope.isshow = false;
+                    var test = angular.element(document.getElementById(id));
+                    var shu = angular.element(document.getElementById('shu'));
+                    test.removeClass('bottle-fade1');
+                    test.addClass('bottle-fadeIn' + type);
+                    window.addEventListener('webkitAnimationEnd', function(e) {
+                        if (!$scope.isshow) {
+                            test.removeClass('a-watering');
+                            shu.addClass('a-swing');
+                            $scope.isshow = true;
+                            $timeout(function() {
+                                shu.css({
+                                    '-webkit-transform': 'scale(1.2,1.2)'
+                                });
+                            }, 1);
+                        }
+                    });
+                    window.addEventListener('webkitAnimationEnd', function(e) {
+                        shu.removeClass('a-swing');
+						
+						
+                    });
+					
+                    //重新获取		
+                    $timeout(function() {
+                        initParams();
+                    }, 1);
+					count = count + 1;
+					console.log(count);
+					if (count == 5){
+						setTimeout(function(){
+							console.log("Hello world");
+							self.location = "two.html";
+						},1000)
+					}
+					
+                }
+
+				
+					
+                function init() {
+                    initParams();
+                }
+				
+				
+                init();
+				
+				
+            });
+        </script>
+		
+    </body>
+
+</html>

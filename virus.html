@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+ 
+	<head>
+		<style>
+			body{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+				background: rgb(76, 76, 76);
+			}
+
+			.container {
+				position: absolute;
+				top:30%;
+				left: 25%;
+				width: 50%;
+				padding: 20px;
+				color: #FFFFFF;
+				margin: 2em auto;
+				overflow: hidden;
+				transform:scale(1.5,1.5);
+				background: rgb(76, 76, 76);
+				box-shadow: 0 0 20px 0px rgb(47, 47, 47),
+										0 0 20px 0px rgba(107, 104, 104, 0);
+
+				
+			}
+
+			.container img {width: 100%;}
+
+			.container .title-card {
+				font-size: 25px;
+				font-weight: 100;
+				margin: 10px 0 0 0;
+				font-family: 'Raleway', sans-serif;
+			}
+
+			.container .rate .fa{color: gold; letter-spacing:1px; font-size:18px;}
+
+			.container .rate p{
+				color: #fff;
+				font-weight: 100;
+				font-size: 17px;
+				display: inline;
+			}
+
+			.container span {
+				width: 100%;
+				color: #FFFFFF;
+				display: inline-block;
+			}
+			.container .map{ margin: 1px 0 -15px 0; }
+			.container .phone{ margin: -5px 0 10px 0; }
+
+
+			.container span p{
+				color: #FFFFFF;
+				margin-left: 10px;
+				}
+
+			.container span p, i{
+				font-size:16px;
+				font-weight: 100;
+				display: inline-block;
+			}
+
+			button {
+
+				width: 100%;
+				color: #fff;
+				padding:17px;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				font-size: 20px;
+				transition: all 0.3s linear;
+				text-transform: uppercase;
+				font-family: 'Open Sans', sans-serif;
+				background: linear-gradient(to left, rgb(11, 191, 160), rgb(108, 196, 115));
+				
+				opacity: 1;
+
+			}
+
+			button:hover{
+				background: linear-gradient(to right, rgb(11, 191, 160), rgb(108, 196, 115));
+				opacity: 0.9;
+			}
+
+
+			p {
+				color: #D8DBE2;
+				font-size: 14px;
+				line-height: 1.5;
+				letter-spacing: 0.3px;
+				font-family: 'Open Sans', sans-serif;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+	 
+		<div class="container">
+			<img src="https://i.loli.net/2021/09/12/H3nq6BchWmrQybU.png" alt="image">
+			<div class="rate">
+				<h3 class="title-card">生物名称：病毒</h3>
+		</div>	
+		
+		<p>一大类亚微观传染源，通常被视为非生命的极其复杂的分子，通常含有一层蛋白质外壳，包裹着遗传物质的RNA或DNA核心，但没有半透膜，只能在活细胞中生长和繁殖，这会导致人类、动物和植物的各种重要疾病。
+		</p>
+		
+		
+		<button onclick="self.location = 'one.html'">进入第一阶段</button>
+		
+		</div>
+	</body>
+ 
+</html>

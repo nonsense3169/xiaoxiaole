@@ -1,0 +1,101 @@
+
+.huluBo{width:auto;position:absolute;top:20%;left:30%;text-align: center;}
+.huluBo .circleB{text-align:center;font-size:12px;color:#1D9F4D;font-weight:bold;line-height:40px;width:40px;height:40px;display:inline-block;border-radius:20px;background-image: linear-gradient(to bottom left, #ECFFD9, #C6FF85);}
+.huluBo .text{margin-top:5px;font-size:12px;color:#1D9F4D;font-weight: bold;}
+.manorBg{ background-image: linear-gradient(to bottom right, #82D6FF, #5EBDFF);}
+.forestBox{position:relative;}
+.forestBox img{width:100%;display: block;border:0px;padding:0px;margin:0px;height:100%;}
+.huluzi{z-index:1;position:absolute;bottom:0px;left:0px;margin-left:20px;margin-bottom:20px;}
+.huluzi .name{font-size:15px;color:#fff;text-shadow: 0px 2px 4px #6C6761;}
+.huluzi .number{margin-top:5px;line-height:28px;font-size:28px;font-weight:bold;color:#fff;text-shadow: 0px 2px 4px #6C6761;}
+.cuteTMZ{position:absolute;top:300px;margin-bottom:20px;left:50%;margin-left:-61px;}
+.cuteTMZ img{width:122px;}
+/*葫芦籽动画效果*/
+/* animation */
+/* 摇摆 */
+.a-swing{-webkit-animation:1s ease forwards;-moz-animation:1s ease forwards;-ms-animation:1s ease forwards;animation:1s ease forwards;}
+.a-swing{-webkit-animation-name:swing;-moz-animation-name:swing;-ms-animation-name:swing;animation-name:swing;}
+.a-watering{-webkit-animation:0.5s ease forwards;-moz-animation:0.5s ease  forwards;-ms-animation:0.5s ease  forwards;animation:0.5s ease  forwards;}
+.a-watering{-webkit-animation-name:watering;-moz-animation-name:watering;-ms-animation-name:watering;animation-name:watering;}
+
+/* 摇摆 */
+.bottle-fade1{-webkit-animation: 2s ease-in-out alternate infinite;-moz-animation:2s ease-in-out alternate infinite;-ms-animation:2s ease-in-out alternate infinite;animation:2s ease-in-out alternate infinite;}
+.bottle-fade1{-webkit-animation-name:bottleFade1;-moz-animation-name:bottleFade1;-ms-animation-name:bottleFade1;animation-name:bottleFade1;}
+
+.bottle-fadeIn1{-webkit-animation:.8s ease forwards;-moz-animation:.8s ease forwards;-ms-animation:.8s ease forwards;animation:.8s ease forwards;}
+.bottle-fadeIn1{-webkit-animation-name:bottleFadeIn1;-moz-animation-name:bottleFadeIn1;-ms-animation-name:bottleFadeIn1;animation-name:bottleFadeIn1;}
+
+.bottle-fadeIn2{-webkit-animation:.8s ease forwards;-moz-animation:.8s ease forwards;-ms-animation:.8s ease forwards;animation:.8s ease forwards;}
+.bottle-fadeIn2{-webkit-animation-name:bottleFadeIn2;-moz-animation-name:bottleFadeIn2;-ms-animation-name:bottleFadeIn2;animation-name:bottleFadeIn2;}
+
+.bottle-fadeIn3{-webkit-animation:.8s ease forwards;-moz-animation:.8s ease forwards;-ms-animation:.8s ease forwards;animation:.8s ease forwards;}
+.bottle-fadeIn3{-webkit-animation-name:bottleFadeIn3;-moz-animation-name:bottleFadeIn3;-ms-animation-name:bottleFadeIn3;animation-name:bottleFadeIn3;}
+
+.bottle-fadeIn4{-webkit-animation:.8s ease forwards;-moz-animation:.8s ease forwards;-ms-animation:.8s ease forwards;animation:.8s ease forwards;}
+.bottle-fadeIn4{-webkit-animation-name:bottleFadeIn4;-moz-animation-name:bottleFadeIn4;-ms-animation-name:bottleFadeIn4;animation-name:bottleFadeIn4;}
+
+.bottle-fadeIn5{-webkit-animation:.8s ease forwards;-moz-animation:.8s ease forwards;-ms-animation:.8s ease forwards;animation:.8s ease forwards;}
+.bottle-fadeIn5{-webkit-animation-name:bottleFadeIn5;-moz-animation-name:bottleFadeIn5;-ms-animation-name:bottleFadeIn5;animation-name:bottleFadeIn5;}
+
+@-webkit-keyframes bottleFade1{
+    from{transform:translate(0,10px)}
+    to{transform:translate(0,18px)}
+}
+/*水瓶动画*/
+@-webkit-keyframes bottleFadeIn1{
+	from {top:8px;opacity: 1;}
+    to {top:280px;left:180px;opacity: 0;}
+}
+/*水瓶动画*/
+@-webkit-keyframes bottleFadeIn2{
+    from {top:80px;left:10px;opacity: 1;}
+    to {top:280px;left:180px;opacity: 0;}
+}
+/*水瓶动画*/
+@-webkit-keyframes bottleFadeIn3{
+    from {top:120px;opacity: 1;}
+    to {top:280px;left:180px;opacity: 0;}
+}
+/*水瓶动画*/
+@-webkit-keyframes bottleFadeIn4{
+    from {top:30px;opacity: 1;}
+    to {top:300px;left:180px;opacity: 0;}
+}
+/*水瓶动画*/
+@-webkit-keyframes bottleFadeIn5{
+    from {top:120px;left:250px;opacity: 1;}
+    to {top:280px;left:180px;opacity: 0;}
+}
+/*流水动画*/
+@-webkit-keyframes watering{
+    0%{opacity:0;opacity: 1;}
+    100%{opacity:1;height:4px;opacity: 0;}
+}
+/* 摇摆 */
+@-webkit-keyframes swing{
+   0%{-webkit-transform:scale(1,1);}
+   35%{-webkit-transform:scale(1.07,1.07);}
+   70%{-webkit-transform:scale(1.1,1.1);}
+   100%{-webkit-transform:scale(1.2,1.2);}
+}
+@-moz-keyframes swing{
+   20%{-moz-transform:rotate(15deg);}
+   40%{-moz-transform:rotate(-10deg);}
+   60%{-moz-transform:rotate(5deg);}
+   80%{-moz-transform:rotate(-5deg);}
+   100%{-moz-transform:rotate(0);}
+}
+@-ms-keyframes swing{
+   20%{-ms-transform:rotate(15deg);}
+   40%{-ms-transform:rotate(-10deg);}
+   60%{-ms-transform:rotate(5deg);}
+   80%{-ms-transform:rotate(-5deg);}
+   100%{-ms-transform:rotate(0);}
+}
+@keyframes swing{
+   20%{transform:rotate(15deg);}
+   40%{transform:rotate(-10deg);}
+   60%{transform:rotate(5deg);}
+   80%{transform:rotate(-5deg);}
+   100%{transform:rotate(0);}
+}

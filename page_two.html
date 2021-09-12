@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <meta name="format-detection" content="telephone=no">
+        <link href="yyf.css" rel="stylesheet">
+	<title>收集能量</title>
+        <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+        <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular-animate.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="manorBg" style="top: 0px!important;" ng-app="myApp" ng-controller="myCtrl">
+            <div class="forestBox">
+                <img src="https://i.loli.net/2021/09/10/TQSv5pEFzKVl8e3.jpg">
+                <div class="huluzi">
+                </div>
+                <div class="cuteTMZ" id="shu" ng-class="{true: 'a-swing'}[isshow]">
+                    <img src="https://i.loli.net/2021/09/09/bFAKC8VZO29BNdQ.png">
+                </div>
+                <div ng-repeat="item in qplist track by $index">
+                    <div class="huluBo bottle-fade1" style="{{item.style}}" id="bottle{{$index+1}}"
+                    ng-click="qpclick('bottle',$index+1,item.operation)">
+                        <div class="circleB">+{{item.score}}</div>
+                        <div class="text">{{item.operation}}</div>
+                    </div>
+                </div>
+            </div>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope, $timeout) {
+                //顶部气泡每次最多展示五个 气泡截取
+                function change() {
+                    //定义气泡位置
+                    $scope.stylelist = [{
+                        style: 'top:40px;left:200px'
+                    }, {
+                        style: 'top:80px;left:10px'
+                    }, {
+                        style: 'top:120px;left:140px'
+                    }, {
+                        style: 'top:30px;left:60px'
+                    }, {
+                        style: 'top:120px;left:250px'
+                    }];
+                    //循环便利到数组里
+                    for (var i = 0; i < $scope.qplist.length; i++) {
+                        $scope.qplist[i].style = $scope.stylelist[i].style;
+                    }
+                }
+
+                function initParams() {
+                    //摇摆动画
+                    $scope.isshow = false;
+                    $scope.qplist = [{
+                        operation: "能量",
+                        score: 'E'
+                    }, {
+                        operation: "水",
+                        score: 'H2O'
+                    }, {
+                        operation: "能量",
+                        score: 'E'
+                    }, {
+                        operation: "水",
+                        score: 'H2O'
+                    }, {
+                        operation: "能量",
+                        score: 'E'
+                    }];
+                    if ($scope.qplist) {
+                        change();
+                    }
+                }
+                //顶部气泡点击效果
+                $scope.qpclick = function(id, type, operation) {
+                    var id = 'bottle' + type;
+                    $scope.doanimation(id, type, operation);
+                };
+				count = 0;
+                //执行动画
+                $scope.doanimation = function(id, type, missionid) {
+                    $scope.isshow = false;
+                    var test = angular.element(document.getElementById(id));
+                    var shu = angular.element(document.getElementById('shu'));
+                    test.removeClass('bottle-fade1');
+                    test.addClass('bottle-fadeIn' + type);
+                    window.addEventListener('webkitAnimationEnd', function(e) {
+                        if (!$scope.isshow) {
+                            test.removeClass('a-watering');
+                            shu.addClass('a-swing');
+                            $scope.isshow = true;
+                            $timeout(function() {
+                                shu.css({
+                                    '-webkit-transform': 'scale(1.2,1.2)'
+                                });
+                            }, 1);
+                        }
+                    });
+                    window.addEventListener('webkitAnimationEnd', function(e) {
+                        shu.removeClass('a-swing');
+						
+						
+                    });
+					
+                    //重新获取		
+                    $timeout(function() {
+                        initParams();
+                    }, 1);
+					count = count + 1;
+					console.log(count);
+					if (count == 5){
+						setTimeout(function(){
+							console.log("Hello world");
+							self.location = "b.html";
+						},1000)
+					}
+					
+                }
+
+				
+					
+                function init() {
+                    initParams();
+                }
+				
+				
+                init();
+				
+				
+            });
+        </script>
+    </body>
+
+</html>

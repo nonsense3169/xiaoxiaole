@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>解锁新生物</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="congrats">
+	<h1>Congratulations!</h1>
+</div>
+<div class="congrats">
+	<h2>解锁新生物！</h2>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js'></script>
+<script src="./script.js"></script>
+
+	<div class="container"><!-- 把文档里的照片裁成200x200（windows自带的画图3d能resize）传到这个网站“sm.ms”然后把对应的图片链接换到下面 -->
+				<img src= "https://i.loli.net/2021/09/12/LfuhVobTljKQO1F.png" alt="image">
+				<div class="rate">
+					<h3 class="title-card">生物名称：大肠杆菌</h3><!-- 换名字 -->
+			</div>	
+			<!-- 换字 -->
+			<p>学名：大肠杆菌，王国：细菌，家族：肠杆菌科，门：变形菌，目：肠杆菌科。
+			</p>
+			
+			<!-- 这里不用改 -->
+			<button onclick="self.location = 'one.html'">进入下一阶段</button>
+			</div>
+	<style>
+		body{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+				background: rgb(76, 76, 76);
+			}
+
+			.container {
+				position: absolute;
+				top:30%;
+				left: 25%;
+				width: 50%;
+				padding: 20px;
+				color: #FFFFFF;
+				margin: 2em auto;
+				overflow: hidden;
+				transform:scale(0.4,0.4);
+				background: rgb(76, 76, 76);
+				box-shadow: 0 0 20px 0px rgb(47, 47, 47),
+										0 0 20px 0px rgba(107, 104, 104, 0);
+
+				
+			}
+
+			.container img {width: 100%;}
+
+			.container .title-card {
+				font-size: 25px;
+				font-weight: 100;
+				margin: 10px 0 0 0;
+				font-family: 'Raleway', sans-serif;
+			}
+
+			.container .rate .fa{color: gold; letter-spacing:1px; font-size:18px;}
+
+			.container .rate p{
+				color: #fff;
+				font-weight: 100;
+				font-size: 17px;
+				display: inline;
+			}
+
+			.container span {
+				width: 100%;
+				color: #FFFFFF;
+				display: inline-block;
+			}
+			.container .map{ margin: 1px 0 -15px 0; }
+			.container .phone{ margin: -5px 0 10px 0; }
+
+
+			.container span p{
+				color: #FFFFFF;
+				margin-left: 10px;
+				}
+
+			.container span p, i{
+				font-size:16px;
+				font-weight: 100;
+				display: inline-block;
+			}
+
+			button {
+
+				width: 100%;
+				color: #fff;
+				padding:17px;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				font-size: 20px;
+				transition: all 0.3s linear;
+				text-transform: uppercase;
+				font-family: 'Open Sans', sans-serif;
+				background: linear-gradient(to left, rgb(11, 191, 160), rgb(108, 196, 115));
+				
+				opacity: 1;
+
+			}
+
+			button:hover{
+				background: linear-gradient(to right, rgb(11, 191, 160), rgb(108, 196, 115));
+				opacity: 0.9;
+			}
+
+
+			p {
+				color: #D8DBE2;
+				font-size: 14px;
+				line-height: 1.5;
+				letter-spacing: 0.3px;
+				font-family: 'Open Sans', sans-serif;
+			}
+	</style>	
+</body>
+</html>
