@@ -1,88 +1,159 @@
-﻿<!DOCTYPE html>
-<html class="SG-game-show" style="background:none;background-color:transparent; width:100%;" manifest="manifest.mf">
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8">
-<script type="text/javascript">
-	var SpilGamesBrandTimer = +new Date(),
-	_SPTimer={w:{},start:function(a){this.w[(a||"_")]=+new Date()},end:function(a){window._gaq=window._gaq||[],a=a||"_";if(this.w[a]){ 
-	}}};
-	_SPTimer.start('pageLoad');
-</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			:root {
+			
+			--bg: #4C4C4C;
+			--primary: #78FFCD;
+			--solid: #fff;
+			--btn-w: 10em;
+		}
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-flow: wrap;
+			background: var(--bg);
+			font-size: 20px;
+			font-family: 'Titillium Web', sans-serif;
+		}
+		
+		*, *:before, *::after { box-sizing: border-box; }
+		
+		.btn {
+			position: relative;
+			margin-top:150px;
+			left: 25%;
+			width: 50%;
+			height: 4rem;
+			display: grid;
+			transform: scale(2,2);
+			place-items: center;
+			text-align: center;
+			color: var(--primary);
+			border: .15em solid var(--primary);
+			border-radius: 5em;
+			text-transform: uppercase;
+			font-size: 1.3em;
+			line-height: 2em;
+			cursor: pointer;	
+		}
+		
+		
+		svg.atom {
+		  max-height:100vh;
+		  max-width:100vw;
+		  overflow:visible;
+		}
 
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="apple-mobile-web-app-capable" content="yes"> 
-<meta name="robots" content="index,follow"> 
-<meta name="apple-touch-fullscreen" content="yes">
-<meta name="description" content="">		
-<title>小任务-开心消消乐</title>		
-<style type="text/css"> * { padding: 0px; margin: 0px; cursor: default; } body { font: 12px/20px Palatino; }</style>
-<!--<script type="text/javascript">document.write('<script type="text/javascript" src="../resource/js/resource_loader.js?ver='+Math.random()+'"><\/script>')</script>-->
-	
-</head>
-<body>
+		svg circle.kern {
+		  fill: #99f8ff;
+		  stroke:none;
+		  filter: drop-shadow(0px 0px 4px #AEEA00);
+		}
+		.atom path {
+		  fill:none;
+		  stroke:#fff;
+		  stroke-width:.06;
+		}
+		
+		path.tail {
+		  stroke: #99f8ff;
+		  fill:none;
+		  animation: atom 3s infinite linear;
+		  stroke-dashoffset: 0;
+		  stroke-dasharray: 20,44.5;
+		  stroke-width: .6;
+		}
+		path.electron {
+		  stroke: #99f8ff;
+		  fill:none;
+		  animation: atom 3s infinite linear;
+		  stroke-dashoffset: 0;
+		  stroke-dasharray: .1,64.4;
+		  stroke-width: 2;
+		  stroke-linecap:round;
+		}
+		path.tail1, path.electron1 {
+		  animation-delay:-1.0s;
+		}
+		path.tail2, path.electron2 {
+		  animation-delay:-1.4s;
+		}
+		/* 129 = ellipse.getTotalLength() */
+		@keyframes atom {
+		  to { stroke-dashoffset:129; }
+		}
 
-<div id="spilgames-root"></div>
-<script type="text/javascript" src="SeaTreasureMatch_files/game.min.js"></script>
+		*,
+		*:before,
+		*:after {
+		  position: relative;
+		  box-sizing: border-box;
+		}
 
-    <script>
-        function dp_Ranking() {
-            document.location.href = "http://app.46465.com/";
-        }
-    </script>
+		.dwf, .share {
+		  position:fixed;
+		  bottom:4px;
+		  right:10px;
+		  background-color:#0003;
+		  padding:3px;
+		  border-radius:3px;
+		  .btn {
+			color:#fff;
+			text-decoration:none
+		  }
+		}
+		.h1 {
+			color: var(--solid);
+			font-size: 2.5rem;
+			top: 50px;	
+			margin-left:150px;
+			
+		}
+		
+		</style>
+	</head>
+	<main>
+		<p style="text-align: center;transform: scale(1.5,1.5);">
+			<img src="https://i.loli.net/2021/09/12/ytvbmJIGc2ohU63.jpg" alt="">
 
-    <div id="share" style="display: none">
-			<img width="100%" src="bitmap/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
-		</div>
-    <script>
-        var mebtnopenurl = "http://app.46465.com/";
-        var tit = "";
-        var DFW = {
-            appId: "",
-            TLImg: "http://app.46465.com/html5/kaixinlian/logo.jpg",
-            url: "http://app.46465.com/html5/kaixinlian/",
-            title: "开心消消乐-多多游戏",
-            desc: "我消，我消，我消...！"
-        };
-        var onBridgeReady = function () {
-            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
-                WeixinJSBridge.invoke('sendAppMessage', {
-                    "appid": DFW.appId,
-                    "img_url": DFW.TLImg,
-                    "img_width": "120",
-                    "img_height": "120",
-                    "link": DFW.url,
-                    "title": DFW.title + tit,
-                    "desc": DFW.desc
-                }
-                );
-            });
-            WeixinJSBridge.on('menu:share:timeline', function (argv) {
-                WeixinJSBridge.invoke('shareTimeline', {
-                    "appid": DFW.appId,
-                    "img_url": DFW.TLImg,
-                    "img_width": "120",
-                    "img_height": "120",
-                    "link": DFW.url,
-                    "title": DFW.title + tit,
-                    "desc": DFW.desc
-                }
-                );
-            });
-        };
-        if (document.addEventListener) { 
-            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-        } else if (document.attachEvent) {
-            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-        }
-        function dp_submitScore(level,score) {
-            //alert("你获得" + score + "分");
-            if (score > 5000) {
-                if (confirm("你获得了" + score + " 要不要通知下小伙伴们呢？")) {
-                    do_share(score);
-                }
-            }
-        }
-    </script>
-<script type="text/javascript" src="http://app.46465.com/js/46.js"></script>
-<div style="display: none;"> <img src="http://img.tongji.linezing.com/3455448/tongji.gif"></div>
-</body></html>
+		</p>
+		
+		<text class="h1">生物进化科普游戏	&#127759;</text>
+		
+		<svg class="atom"  viewBox="0 0 100 100">
+		  <defs>
+			
+		  </defs>
+		  <g filter="url(#blur2)">
+		  <circle class="kern" cx="50" cy="50" r="2" />
+		  </g>
+		  <circle class="kern" cx="50" cy="50" r="2" />
+		  <g class="lines">
+			<path class="" d="M  57.5,50 57.39,55.21 57.05,60.26 56.5,65 55.75,69.28 54.82,72.98 53.75,75.98 52.57,78.19 51.3,79.54 50,80 48.7,79.54 47.43,78.19 46.25,75.98 45.18,72.98 44.25,69.28 43.5,65 42.95,60.26 42.61,55.21 42.5,50 42.61,44.79 42.95,39.74 43.5,35 44.25,30.72 45.18,27.02 46.25,24.02 47.43,21.81 48.7,20.46 50,20 51.3,20.46 52.57,21.81 53.75,24.02 54.82,27.02 55.75,30.72 56.5,35 57.05,39.74 57.39,44.79 57.5,50"></path>
+			<path class="" d="M  53.75,56.5 49.18,59 44.64,61.23 40.26,63.13 36.17,64.62 32.51,65.67 29.38,66.24 26.87,66.32 25.07,65.9 24.02,65 23.76,63.64 24.3,61.87 25.63,59.74 27.69,57.32 30.43,54.67 33.76,51.88 37.59,49.03 41.8,46.21 46.25,43.5 50.82,41 55.36,38.77 59.74,36.88 63.83,35.38 67.49,34.33 70.62,33.76 73.13,33.68 74.93,34.1 75.98,35 76.24,36.36 75.7,38.13 74.38,40.26 72.31,42.68 69.57,45.33 66.24,48.12 62.41,50.97 58.2,53.79 53.75,56.5"></path>
+			<path class="" d="M  53.75,43.5 58.2,46.21 62.41,49.03 66.24,51.88 69.57,54.67 72.31,57.32 74.38,59.74 75.7,61.87 76.24,63.64 75.98,65 74.93,65.9 73.13,66.32 70.63,66.24 67.49,65.67 63.83,64.62 59.74,63.13 55.36,61.23 50.82,59 46.25,56.5 41.8,53.79 37.59,50.97 33.76,48.13 30.43,45.33 27.69,42.68 25.63,40.26 24.3,38.13 23.76,36.36 24.02,35 25.07,34.1 26.87,33.68 29.37,33.76 32.51,34.33 36.17,35.38 40.26,36.87 44.64,38.77 49.18,41 53.75,43.5"></path>
+			</g>
+		  <g class="electronTails"  filter="url(#blur)" >
+			<path class="tail tail1" d="M  57.5,50 57.39,55.21 57.05,60.26 56.5,65 55.75,69.28 54.82,72.98 53.75,75.98 52.57,78.19 51.3,79.54 50,80 48.7,79.54 47.43,78.19 46.25,75.98 45.18,72.98 44.25,69.28 43.5,65 42.95,60.26 42.61,55.21 42.5,50 42.61,44.79 42.95,39.74 43.5,35 44.25,30.72 45.18,27.02 46.25,24.02 47.43,21.81 48.7,20.46 50,20 51.3,20.46 52.57,21.81 53.75,24.02 54.82,27.02 55.75,30.72 56.5,35 57.05,39.74 57.39,44.79 57.5,50"></path>
+			<path class="tail tail2" d="M  53.75,56.5 49.18,59 44.64,61.23 40.26,63.13 36.17,64.62 32.51,65.67 29.38,66.24 26.87,66.32 25.07,65.9 24.02,65 23.76,63.64 24.3,61.87 25.63,59.74 27.69,57.32 30.43,54.67 33.76,51.88 37.59,49.03 41.8,46.21 46.25,43.5 50.82,41 55.36,38.77 59.74,36.88 63.83,35.38 67.49,34.33 70.62,33.76 73.13,33.68 74.93,34.1 75.98,35 76.24,36.36 75.7,38.13 74.38,40.26 72.31,42.68 69.57,45.33 66.24,48.12 62.41,50.97 58.2,53.79 53.75,56.5"></path>
+			<path class="tail tail3" d="M  53.75,43.5 58.2,46.21 62.41,49.03 66.24,51.88 69.57,54.67 72.31,57.32 74.38,59.74 75.7,61.87 76.24,63.64 75.98,65 74.93,65.9 73.13,66.32 70.63,66.24 67.49,65.67 63.83,64.62 59.74,63.13 55.36,61.23 50.82,59 46.25,56.5 41.8,53.79 37.59,50.97 33.76,48.13 30.43,45.33 27.69,42.68 25.63,40.26 24.3,38.13 23.76,36.36 24.02,35 25.07,34.1 26.87,33.68 29.37,33.76 32.51,34.33 36.17,35.38 40.26,36.87 44.64,38.77 49.18,41 53.75,43.5"></path>
+		  </g>
+		  <g class="electrons">
+			<path class="electron electron1" d="M  57.5,50 57.39,55.21 57.05,60.26 56.5,65 55.75,69.28 54.82,72.98 53.75,75.98 52.57,78.19 51.3,79.54 50,80 48.7,79.54 47.43,78.19 46.25,75.98 45.18,72.98 44.25,69.28 43.5,65 42.95,60.26 42.61,55.21 42.5,50 42.61,44.79 42.95,39.74 43.5,35 44.25,30.72 45.18,27.02 46.25,24.02 47.43,21.81 48.7,20.46 50,20 51.3,20.46 52.57,21.81 53.75,24.02 54.82,27.02 55.75,30.72 56.5,35 57.05,39.74 57.39,44.79 57.5,50"></path>
+			<path class="electron electron2" d="M  53.75,56.5 49.18,59 44.64,61.23 40.26,63.13 36.17,64.62 32.51,65.67 29.38,66.24 26.87,66.32 25.07,65.9 24.02,65 23.76,63.64 24.3,61.87 25.63,59.74 27.69,57.32 30.43,54.67 33.76,51.88 37.59,49.03 41.8,46.21 46.25,43.5 50.82,41 55.36,38.77 59.74,36.88 63.83,35.38 67.49,34.33 70.62,33.76 73.13,33.68 74.93,34.1 75.98,35 76.24,36.36 75.7,38.13 74.38,40.26 72.31,42.68 69.57,45.33 66.24,48.12 62.41,50.97 58.2,53.79 53.75,56.5">
+			</path>
+			<path class="electron electron3" d="M  53.75,43.5 58.2,46.21 62.41,49.03 66.24,51.88 69.57,54.67 72.31,57.32 74.38,59.74 75.7,61.87 76.24,63.64 75.98,65 74.93,65.9 73.13,66.32 70.63,66.24 67.49,65.67 63.83,64.62 59.74,63.13 55.36,61.23 50.82,59 46.25,56.5 41.8,53.79 37.59,50.97 33.76,48.13 30.43,45.33 27.69,42.68 25.63,40.26 24.3,38.13 23.76,36.36 24.02,35 25.07,34.1 26.87,33.68 29.37,33.76 32.51,34.33 36.17,35.38 40.26,36.87 44.64,38.77 49.18,41 53.75,43.5"></path></g>
+		</svg>
+		
+		<div class="container">	
+			<div class="btn" onclick="self.location = 'info.html'">
+				<text>开始游戏</text>
+			</div>
+		</div>	
+		
+	</main>
+</html>
